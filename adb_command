@@ -1,0 +1,20 @@
+windows环境
+1.adb shell cat /system/build.prop 查看设备信息（包括每个应用的最大内存限制）
+2.adb shell monkey -p hk.newsportal.intlheadline 1000 -v -throttle 300 -pct-touch 30 -pct-motion 20 -pct-nav 20 -pct-majornav 15 -pct-appswitch 5 -pct-anyevent 5 -pct-trackball 0 -pct-syskeys 0  (360应用商店monkey测试)
+3.aapt dump badging packagename(查看应用基本信息)
+4.adb shell ps|find(grep) packagename(查看应用进程信息)
+5.cat /proc/pid/oom_adj
+
+
+6.jar 包转成dex.jar文件命令
+dx --dex --output=dynamic_dex_1.jar dynamic.jar
+7.dex 转 jar
+d2j-dex2jar classes.dex
+
+8.查看当前activity
+adb shell dumpsys activity | find "mFocusedActivity"
+
+
+
+
+
